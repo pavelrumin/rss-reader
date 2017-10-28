@@ -18,9 +18,9 @@ export const receiveData = rss => ({
 });
 
 export const RECEIVE_ERROR = 'RECEIVE_ERROR';
-export const receiveError = code => ({
+export const receiveError = error => ({
     type: RECEIVE_ERROR,
-    code
+    error
 });
 
 export const loadRss = url =>

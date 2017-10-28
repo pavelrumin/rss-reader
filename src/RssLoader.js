@@ -3,6 +3,10 @@ export class RssLoader {
     async load(url) {
         let text = await this.loadUrl(url);
 
+        if(!text) {
+            throw new Error('Loading error');
+        }
+
         let rss = this.parseXml(text);
         if(rss) return this.rssToJson(rss);
 
@@ -17,7 +21,7 @@ export class RssLoader {
 
     async loadUrl(url) {
         let response = await fetch('https://cors-anywhere.herokuapp.com/' + url);
-        return await response.text();
+        return response.ok ? await response.text() : false;
     }
 
     parseXml(text) {

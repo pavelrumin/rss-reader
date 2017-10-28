@@ -3,7 +3,8 @@ import {ENTER_URL, RECEIVE_DATA, RECEIVE_ERROR, REQUEST_DATA} from '../actions/i
 const loadRss = (state = {
     url: 'https://habrahabr.ru/rss/best/',
     isLoading: false,
-    rssData: null
+    rssData: null,
+    error: null
 }, action) => {
     switch (action.type) {
         case ENTER_URL:
@@ -29,7 +30,7 @@ const loadRss = (state = {
             return {
                 ...state,
                 isLoading: false,
-                code: action.code
+                error: action.error
             };
 
         default:

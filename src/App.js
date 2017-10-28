@@ -5,6 +5,7 @@ import Loader from './components/Loader';
 import RssRenderer from './components/RssRenderer';
 import UrlInput from './components/UrlInput';
 import AutoUpdater from './components/AutoUpdater';
+import ErrorMessage from './components/ErrorMessage';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
                     </Form>
 
                     <Loader/>
+                    <ErrorMessage/>
                     <RssRenderer/>
                     <AutoUpdater/>
 
